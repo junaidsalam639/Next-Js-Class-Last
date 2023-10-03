@@ -12,7 +12,7 @@ export default async function Product() {
         {
             wait.map((data , index) =>{
                 return(
-                    <Link key={index} href={'/'}>
+                    <Link key={index} href={`/product/${data.id}`}>
                     <div className='w-64 flex flex-col items-center my-8'>
                         <Image src={data.image} width={150} height={150} />
                         <h1>{data.title}</h1>
