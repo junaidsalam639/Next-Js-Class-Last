@@ -13,7 +13,7 @@ const Navbar_One = () => {
                 <Link href={'/product'}>
                     <h1 className='bg-orange-600 w-32 text-center py-3 font-medium text-md text-white cursor-pointer hover:bg-orange-500 rounded-md'>Product</h1>
                 </Link>             
-                    <h1 className='bg-orange-600 w-32 text-center py-3 font-medium text-md text-white cursor-pointer hover:bg-orange-500 rounded-md' onClick={() => setLogin(true)}>{login ? 'Logout' : 'Login'}</h1>
+                    <h1 className='bg-orange-600 w-32 text-center py-3 font-medium text-md text-white cursor-pointer hover:bg-orange-500 rounded-md' onClick={() => login ? setLogin(false) : setLogin(true)}>{login ? 'Logout' : 'Login'}</h1>
             </div>
         </div>
     )
