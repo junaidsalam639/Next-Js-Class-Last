@@ -1,12 +1,14 @@
 import AuthProvider from '@/app/context/AuthProvider'
-import Navbar_One from '@/app/component/Navbar';
+import {Chakraui} from '@/app/component/Chakraui'
 
-export default function Home() {  
+export default function Home() {
+  
   return (
     <AuthProvider>
-    <>
-    <Navbar_One />
-    </>
+      <>
+    <Chakraui />
+      
+      </>
     </AuthProvider>
   )
 }
