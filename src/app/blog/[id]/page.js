@@ -1,10 +1,12 @@
+import { fecthUser } from "@/app/Fecth/fecthUser";
 import fecthUserDetail from "../../Fecth/fecthUserDetail"
 
 export async function generateMetadata({ params }){
-  const usersDetail = await fecthUserDetail(params.id);
+  const usersDetail = await fecthUser();
+  let user = usersDetail[params.id - 1];
   return{
-    title : usersDetail.id,
-    description : usersDetail.userId,
+    title : user.name,
+    description : user.email,
   }
 }
 
@@ -16,7 +18,7 @@ const page = async ({ params }) => {
       {
         res.map((item, index) => {
           return (
-            <div key={index} className="bg-indigo-800 px-4 py-4 my-4 text-white rounded-md">
+            <div key={index} className="bg-indigo-600 px-4 py-4 my-4 text-white rounded-md hover:bg-indigo-500 transition-all cursor-pointer">
               <h2><b>Title : </b>{item.title}</h2>
               <h2><b>Description : </b>{item.body}</h2>
             </div>
