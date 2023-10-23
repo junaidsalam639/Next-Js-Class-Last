@@ -3,7 +3,7 @@ const TodoList = () => {
     return (
         <div>
             <>
-                <div className="nav flex flex-row justify-between items-center py-4 w-3/6 border mx-auto container px-4 my-4">
+                <div className="nav flex flex-row justify-between items-center py-4 max-w-3xl border mx-auto container px-4 my-4">
                     <div>
                         <p className='font-bold text-2xl'>Tailwind Css</p>
                         <p className='font-bold flex-col'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
