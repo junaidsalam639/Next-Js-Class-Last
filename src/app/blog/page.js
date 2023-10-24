@@ -1,5 +1,6 @@
 import { fecthUser } from '../Fecth/fecthUser'
 import Link from 'next/link'
+
 const page = async () => {
   const wait = await fecthUser();
   return (

@@ -9,13 +9,14 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
-
+import {useContext} from 'react'
+import { AuthContext } from '../context/AuthProvider'
 
 export const Chakraui = () => {
-    const { colorMode, toggleColorMode } = useColorMode()
-    const isDark = colorMode === 'dark'
     const [display, changeDisplay] = useState('none')
-    return (
+    const {login , setLogin}  = useContext(AuthContext);
+    console.log(login);
+        return (
         <Flex>
             <Flex
                 position="fixed"
@@ -28,19 +29,19 @@ export const Chakraui = () => {
                 <Flex
                     display={['none', 'none', 'flex', 'flex']}
                 >
-                    <NextLink href="/" passHref>
-                        <Button
-                            as="a"
-                            variant="ghost"
-                            aria-label="Home"
-                            my={5}
-                            w="100%"
-                        >
-                            Home
-                        </Button>
-                    </NextLink>
+                        <NextLink href="/" passHref>
+                            <Button
+                                as="a"
+                                variant="ghost"
+                                aria-label="Home"
+                                my={5}
+                                w="100%"
+                            >
+                                Home
+                            </Button>
+                        </NextLink>
 
-                    <NextLink href="/about" passHref>
+                    <NextLink href="/blog" passHref>
                         <Button
                             as="a"
                             variant="ghost"
@@ -48,11 +49,11 @@ export const Chakraui = () => {
                             my={5}
                             w="100%"
                         >
-                            About
+                            Blogs
                         </Button>
                     </NextLink>
 
-                    <NextLink href="/contact" passHref>
+                    <NextLink href="/Todo_Pages/todo" passHref>
                         <Button
                             as="a"
                             variant="ghost"
@@ -60,7 +61,32 @@ export const Chakraui = () => {
                             my={5}
                             w="100%"
                         >
-                            Contact
+                            Todo
+                        </Button>
+                    </NextLink>
+
+                    <NextLink href="/product" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Contact"
+                            my={5}
+                            w="100%"
+                        >
+                            Product
+                        </Button>
+                    </NextLink>
+
+
+                    <NextLink href="/" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Contact"
+                            my={5}
+                            w="100%"
+                        onClick={() => login ? setLogin(false) : setLogin(true)}>
+                            {login ? 'Logout' : 'login'}
                         </Button>
                     </NextLink>
                 </Flex>
@@ -75,11 +101,6 @@ export const Chakraui = () => {
                     }
                     onClick={() => changeDisplay('flex')}
                     display={['flex', 'flex', 'none', 'none']}
-                />
-                <Switch
-                    color="green"
-                    isChecked={isDark}
-                    onChange={toggleColorMode}
                 />
             </Flex>
 
@@ -125,7 +146,7 @@ export const Chakraui = () => {
                         </Button>
                     </NextLink>
 
-                    <NextLink href="/about" passHref>
+                    <NextLink href="/blog" passHref>
                         <Button
                             as="a"
                             variant="ghost"
@@ -133,11 +154,11 @@ export const Chakraui = () => {
                             my={5}
                             w="100%"
                         >
-                            About
+                            Blogs
                         </Button>
                     </NextLink>
 
-                    <NextLink href="/contact" passHref>
+                    <NextLink href="/Todo_Pages/todo" passHref>
                         <Button
                             as="a"
                             variant="ghost"
@@ -145,7 +166,31 @@ export const Chakraui = () => {
                             my={5}
                             w="100%"
                         >
-                            Contact
+                            Todo
+                        </Button>
+                    </NextLink>
+
+                    <NextLink href="/product" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Contact"
+                            my={5}
+                            w="100%"
+                        >
+                           Product
+                        </Button>
+                    </NextLink>
+
+                    <NextLink href="/" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Contact"
+                            my={5}
+                            w="100%"
+                        onClick={() => login ? setLogin(false) : setLogin(true)}>
+                            {login ? 'Logout' : 'Login'}
                         </Button>
                     </NextLink>
                 </Flex>
